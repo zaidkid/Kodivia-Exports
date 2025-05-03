@@ -2,7 +2,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CheckCircle, Truck, Shield, Users } from 'lucide-react';
+import { Truck, Shield, Users } from 'lucide-react';
 
 const WhyChooseUsSection = () => {
   return (
@@ -24,7 +24,7 @@ const WhyChooseUsSection = () => {
       </div>
 
       <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
-        {/* Updated Animated Heading */}
+        {/* Animated Heading */}
         <motion.h2
           className="text-5xl font-bold text-blue-500 mb-6"
           initial={{ opacity: 0, y: -20 }}
@@ -32,10 +32,10 @@ const WhyChooseUsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          Transforming Global Trade with Precision & Trust
+          Transforming Global Trade with Precision &amp; Trust
         </motion.h2>
 
-        {/* Enhanced Animated Paragraph */}
+        {/* Animated Paragraph */}
         <motion.p
           className="text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto mb-8"
           initial={{ opacity: 0, y: 20 }}
@@ -46,7 +46,7 @@ const WhyChooseUsSection = () => {
           Kodivia ensures seamless, efficient, and secure global trade solutions tailored to the evolving needs of modern businesses. From navigating complex regulations to ensuring on-time delivery, our expert team guarantees that your international operations are handled with precision and dedication.
         </motion.p>
 
-        {/* Animated Icons with Additional Delay */}
+        {/* Animated Feature Icons */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -68,7 +68,7 @@ const WhyChooseUsSection = () => {
             className="flex flex-col items-center gap-4 text-center"
           >
             <Shield className="text-blue-500 w-12 h-12 transition duration-300" />
-            <h3 className="text-xl font-semibold">Security & Compliance</h3>
+            <h3 className="text-xl font-semibold">Security &amp; Compliance</h3>
             <p className="text-gray-300">We navigate complex trade regulations, ensuring your shipments are always compliant.</p>
           </motion.div>
 
@@ -82,7 +82,7 @@ const WhyChooseUsSection = () => {
           </motion.div>
         </motion.div>
 
-        {/* Optional CTA Button */}
+        {/* Call to Action */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

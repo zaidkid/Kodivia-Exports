@@ -42,7 +42,7 @@ export default function Home() {
         <FadeInWhenVisible>
           <section className="relative py-20 bg-black overflow-hidden">
             <div className="relative z-10 max-w-6xl mx-auto text-center mb-12 px-4">
-              <h2 className="text-4xl font-bold text-blue-400">Kodivia's Global Reach</h2>
+              <h2 className="text-4xl font-bold text-blue-400">Kodivia&apos;s Global Reach</h2>
               <p className="text-lg text-gray-300 mt-4">
                 We connect the world through seamless trade routes and partnerships.
               </p>

@@ -1,16 +1,24 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
+// Define a type for the chat message
+type ChatMessage = {
+  text: string;
+  sender: 'user' | 'bot';
+};
+
 const ChatWidget = () => {
-  const [messages, setMessages] = useState<any[]>([]);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputMessage, setInputMessage] = useState('');
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const socket = new WebSocket('ws://localhost:5000');
 
-    socket.onmessage = (event) => {
-      const message = JSON.parse(event.data);
+    socket.onmessage = (event: MessageEvent) => {
+      const message: ChatMessage = JSON.parse(event.data);
       setMessages((prevMessages) => [...prevMessages, message]);
     };
 
@@ -21,7 +29,7 @@ const ChatWidget = () => {
 
   const handleSendMessage = () => {
     if (inputMessage.trim()) {
-      const message = {
+      const message: ChatMessage = {
         text: inputMessage,
         sender: 'user',
       };
@@ -64,7 +72,7 @@ const ChatWidget = () => {
           <p className="text-center text-[15px] text-neutral-700 font-semibold">
             💬 Ask your query and get instant assistance.
           </p>
-          <br/>
+          <br />
           <div className="flex items-center w-full space-x-2">
             <input
               type="text"

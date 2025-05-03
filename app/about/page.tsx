@@ -33,7 +33,7 @@ export default function AboutPage() {
         >
           <h2 className="text-4xl font-bold mb-6 text-white">Who We Are</h2>
           <p className="text-lg leading-8 text-white dark:text-gray-300">
-            At Kodivia, we don't just see ourselves as a company—we are a global force shaping the future of international trade. We are committed to connecting businesses with the highest quality products across various industries. Our strength lies in our deep-rooted expertise, unwavering commitment to quality, and our ability to adapt to the ever-evolving demands of the global marketplace.
+            At Kodivia, we don&apos;t just see ourselves as a company—we are a global force shaping the future of international trade. We are committed to connecting businesses with the highest quality products across various industries. Our strength lies in our deep-rooted expertise, unwavering commitment to quality, and our ability to adapt to the ever-evolving demands of the global marketplace.
           </p>
           <p className="text-lg leading-8 text-white dark:text-gray-300 mt-4">
             Driven by innovation and focused on fostering long-term relationships with our clients, we ensure that every partnership we build is rooted in trust, reliability, and mutual growth. Our diverse portfolio spans several key sectors, including rice exports, automotive components, healthcare equipment, and garment fabrics, making us a comprehensive solution for businesses looking to navigate the complexities of global trade.

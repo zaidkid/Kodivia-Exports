@@ -20,7 +20,7 @@ const ContactPage = () => {
             Contact Us
           </h1>
           <p className="text-xl text-gray-300">
-            We're here to support your business needs. Let's connect.
+            We&apos;re here to support your business needs. Let&apos;s connect.
           </p>
         </motion.div>
       </section>
@@ -79,7 +79,7 @@ const ContactPage = () => {
             Send Us a Message
           </motion.h2>
           <p className="text-gray-600 dark:text-gray-400 mb-12">
-            Fill out the form and we’ll get back to you shortly.
+            Fill out the form and we&apos;ll get back to you shortly.
           </p>
 
           <form className="grid grid-cols-1 sm:grid-cols-2 gap-6">
