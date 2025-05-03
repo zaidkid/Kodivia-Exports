@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react'; // Import useState
+import { useState } from 'react';
 import Link from 'next/link';
 import FadeInWhenVisible from './animations/FadeInWhenVisible'; // Assuming this path is correct for your project
 
@@ -47,7 +47,7 @@ const Navbar = () => {
 
         {/* Mobile Dropdown Menu */}
         {isMenuOpen && (
-          <div className="md:hidden flex flex-col space-y-4 px-4 py-2 bg-white dark:bg-black">
+          <div className="md:hidden flex flex-col space-y-4 px-4 py-2 bg-white dark:bg-black shadow-lg rounded w-full z-50 absolute top-0 left-0">
             <Link href="/" className="text-lg text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">
               Home
             </Link>

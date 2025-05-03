@@ -52,7 +52,7 @@ const ChatWidget = () => {
         }`}
       >
         {/* Messages area */}
-        <div className="space-y-2 min-h-[4rem] max-h-60 overflow-y-auto mb-4 scrollbar-thin scrollbar-thumb-blue-400 scrollbar-track-blue-100">
+        <div className="space-y-2 min-h-[4rem] max-h-60 overflow-y-scroll mb-4 scrollbar-thin scrollbar-thumb-blue-400 scrollbar-track-blue-100">
           {messages.map((message, index) => (
             <div
               key={index}
@@ -78,7 +78,7 @@ const ChatWidget = () => {
               type="text"
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}
-              className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-black dark:bg-gray-800 dark:text-white"
               placeholder="Type a message"
             />
             <button
