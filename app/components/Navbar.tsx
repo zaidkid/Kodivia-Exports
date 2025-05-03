@@ -1,69 +1,56 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import FadeInWhenVisible from './animations/FadeInWhenVisible'; // Assuming this path is correct for your project
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
-  // State to handle mobile menu toggle
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  // Function to toggle the menu on mobile
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   return (
-    <FadeInWhenVisible>
-      <nav className="bg-white dark:bg-black shadow-md sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold text-black dark:text-white">
+    <nav className="bg-white text-gray-900 shadow fixed top-0 left-0 w-full z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+        
+        {/* Logo */}
+        <div className="text-[1.6rem] font-black tracking-tight">
+          <Link
+            href="/"
+            onClick={closeMenu}
+            className="text-black hover:text-neutral-800 transition-colors duration-200"
+          >
             Kodivia
           </Link>
-
-          {/* Desktop Menu */}
-          <div className="space-x-6 hidden md:flex">
-            <Link href="/" className="text-lg text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">
-              Home
-            </Link>
-            <Link href="/about" className="text-lg text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">
-              About Us
-            </Link>
-            <Link href="/services" className="text-lg text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">
-              Services
-            </Link>
-            <Link href="/contact" className="text-lg text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">
-              Contact
-            </Link>
-          </div>
-
-          {/* Mobile Menu (hamburger) */}
-          <div className="md:hidden flex items-center">
-            <button onClick={toggleMenu} className="text-gray-700 dark:text-white">
-              <i className="fas fa-bars text-2xl"></i>
-            </button>
-          </div>
         </div>
 
-        {/* Mobile Dropdown Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden flex flex-col space-y-4 px-4 py-2 bg-white dark:bg-black shadow-lg rounded w-full z-50 absolute top-0 left-0">
-            <Link href="/" className="text-lg text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">
-              Home
-            </Link>
-            <Link href="/about" className="text-lg text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">
-              About Us
-            </Link>
-            <Link href="/services" className="text-lg text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">
-              Services
-            </Link>
-            <Link href="/contact" className="text-lg text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition duration-300">
-              Contact
-            </Link>
-          </div>
-        )}
-      </nav>
-    </FadeInWhenVisible>
+        {/* Desktop Links */}
+        <div className="hidden md:flex space-x-8 text-lg font-medium">
+          <Link href="/" className="hover:text-blue-600">Home</Link>
+          <Link href="/about" className="hover:text-blue-600">About</Link>
+          <Link href="/services" className="hover:text-blue-600">Services</Link>
+          <Link href="/contact" className="hover:text-blue-600">Contact</Link>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button onClick={toggleMenu} className="text-gray-900 hover:text-blue-600" aria-label="Toggle menu">
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Dropdown */}
+      <div className={`md:hidden transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-96 py-2' : 'max-h-0'} bg-white`}>
+        <div className="flex flex-col items-start px-6 space-y-3 text-lg font-medium">
+          <Link href="/" onClick={closeMenu} className="w-full hover:text-blue-600">Home</Link>
+          <Link href="/about" onClick={closeMenu} className="w-full hover:text-blue-600">About</Link>
+          <Link href="/services" onClick={closeMenu} className="w-full hover:text-blue-600">Services</Link>
+          <Link href="/contact" onClick={closeMenu} className="w-full hover:text-blue-600">Contact</Link>
+        </div>
+      </div>
+    </nav>
   );
 };
 
