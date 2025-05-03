@@ -1,57 +1,61 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { FaBriefcase, FaSearch, FaBalanceScale } from 'react-icons/fa';
+
+const features = [
+  {
+    icon: <FaBriefcase className="text-4xl text-blue-400 mb-4 transition-transform duration-300 group-hover:scale-110" />,
+    title: "Seamless Global Trade",
+    description: "Efficient export-import services ensuring smooth international transactions.",
+  },
+  {
+    icon: <FaSearch className="text-4xl text-blue-400 mb-4 transition-transform duration-300 group-hover:scale-110" />,
+    title: "Logistics and Supply Chain Expertise",
+    description: "End-to-end management of logistics, ensuring timely and reliable deliveries.",
+  },
+  {
+    icon: <FaBalanceScale className="text-4xl text-blue-400 mb-4 transition-transform duration-300 group-hover:scale-110" />,
+    title: "Compliance & Regulatory Support",
+    description: "Expert handling of trade documentation and compliance requirements.",
+  },
+];
 
 const FeaturesSection = () => {
   return (
     <section
-      className="py-20 bg-cover bg-center bg-no-repeat relative"
+      className="relative py-20 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url('/assets/cargo-plane.jpeg')` }}
     >
-      {/* Overlay for contrast */}
-      <div className="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm"></div>
-
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 text-white z-10 text-center">
-        <h2 className="text-4xl font-bold mb-14 text-blue-400 drop-shadow-lg">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 text-center text-white">
+        {/* Animated Heading with Underline */}
+        <motion.h2
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl sm:text-5xl font-bold mb-6 text-black drop-shadow-md"
+        >
           Our Key Features
-        </h2>
+        </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {/* Feature 1 */}
-          <motion.div
-            className="p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-md hover:shadow-2xl hover:scale-[1.05] transition-all duration-300 transform hover:translate-y-1"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <i className="fas fa-briefcase text-5xl mb-4 text-blue-400"></i>
-            <h3 className="text-2xl font-semibold mb-3 text-white">Seamless Global Trade</h3>
-            <p className="text-gray-200">Efficient export-import services ensuring smooth international transactions.</p>
-          </motion.div>
+        {/* Glowing underline */}
+        <div className="w-32 h-1 bg-blue-400 mx-auto mb-10 rounded-full animate-pulse" />
 
-          {/* Feature 2 */}
-          <motion.div
-            className="p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-md hover:shadow-2xl hover:scale-[1.05] transition-all duration-300 transform hover:translate-y-1"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-          >
-            <i className="fas fa-search text-5xl mb-4 text-blue-400"></i>
-            <h3 className="text-2xl font-semibold mb-3 text-white">Logistics and Supply Chain Expertise</h3>
-            <p className="text-gray-200">End-to-end management of logistics, ensuring timely and reliable deliveries.</p>
-          </motion.div>
-
-          {/* Feature 3 */}
-          <motion.div
-            className="p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-md hover:shadow-2xl hover:scale-[1.05] transition-all duration-300 transform hover:translate-y-1"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
-          >
-            <i className="fas fa-chart-line text-5xl mb-4 text-blue-400"></i>
-            <h3 className="text-2xl font-semibold mb-3 text-white">Compliance and Regulatory Support</h3>
-            <p className="text-gray-200">Expert handling of international trade documentation and compliance requirements.</p>
-          </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              className="group p-8 bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl shadow-lg transition duration-300 hover:shadow-blue-500/30 hover:-translate-y-2 hover:scale-[1.03]"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+            >
+              {feature.icon}
+              <h3 className="text-2xl font-semibold mb-3 text-white">{feature.title}</h3>
+              <p className="text-gray-300">{feature.description}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
