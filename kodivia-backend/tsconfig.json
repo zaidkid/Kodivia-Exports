@@ -1,12 +1,19 @@
 {
-    "compilerOptions": {
-      "target": "es6",
-      "module": "commonjs",
-      "rootDir": "./",
-      "outDir": "./dist",
-      "strict": true,
-      "esModuleInterop": true
-    },
-    "include": ["./**/*.ts"]
-  }
-  
+  "compilerOptions": {
+    "target": "ES6",                           // Compiles to ES6 JavaScript
+    "module": "commonjs",                      // Use CommonJS module system (since it's a Node.js backend)
+    "rootDir": "./src",                        // Assuming your source code is in the `src` folder
+    "outDir": "./dist",                        // Transpiled code will go into the `dist` folder
+    "strict": true,                            // Enable strict type-checking options
+    "esModuleInterop": true,                   // Ensures compatibility with ES6 imports/exports
+    "skipLibCheck": true,                      // Skip type checking of declaration files (improves build time)
+    "resolveJsonModule": true,                 // Allows importing JSON files as modules
+    "types": ["node", "cors"]                  // Add `node` and `cors` types to help TypeScript understand these dependencies
+  },
+  "include": [
+    "src/**/*.ts"                              // Ensure TypeScript processes files inside the `src` folder
+  ],
+  "exclude": [
+    "node_modules"                             // Exclude the `node_modules` folder
+  ]
+}
