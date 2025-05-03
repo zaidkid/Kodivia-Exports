@@ -27,13 +27,16 @@ const FeaturesSection = () => {
       className="relative py-20 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url('/assets/cargo-plane.jpeg')` }}
     >
+      {/* Background Overlay for Better Text Visibility */}
+      <div className="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
+
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 text-center text-white">
         {/* Animated Heading with Underline */}
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl sm:text-5xl font-bold mb-6 text-black drop-shadow-md"
+          className="text-4xl sm:text-5xl font-bold mb-6 text-white drop-shadow-md"
         >
           Our Key Features
         </motion.h2>
