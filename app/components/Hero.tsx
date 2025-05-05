@@ -41,7 +41,7 @@ const Hero = () => {
           Based in Barabanki, India — Kodivia delivers industrial, consumer, and agricultural goods with trust, speed, and care.
         </p>
 
-        <a href="#contact">
+        <a href="contact">
           <button className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 rounded-full shadow-lg">
             Let’s Talk <ArrowRight size={18} />
           </button>
