@@ -2,7 +2,9 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import http from 'http';
-import { Server } from 'socket.io';
+// @ts-ignore
+const { Server } = require('socket.io');
+
 import connectDB from './config/db';
 import productRoutes from './routes/productRoutes';
 
