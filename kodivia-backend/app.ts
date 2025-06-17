@@ -3,7 +3,8 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import http from 'http';
 // @ts-ignore
-const { Server } = require('socket.io');
+import { Server, Socket } from 'socket.io';
+
 
 import connectDB from './config/db';
 import productRoutes from './routes/productRoutes';
@@ -35,7 +36,7 @@ services: "We provide complete export solutions — from sourcing and product cu
 };
 
 // WebSocket handler
-io.on('connection', (socket) => {
+io.on('connection', (socket: Socket) => {
   console.log('✅ Chat client connected');
 
   socket.on('message', (data: any) => {
