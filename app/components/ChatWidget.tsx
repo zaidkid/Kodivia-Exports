@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { io, Socket } from 'socket.io-client';
+import io from 'socket.io-client';
+type SocketType = ReturnType<typeof io>;
 import { motion } from 'framer-motion';
 
 type ChatMessage = {
@@ -10,7 +11,7 @@ type ChatMessage = {
 };
 
 const ChatWidget = () => {
-  const socketRef = useRef<Socket | null>(null);
+  const socketRef = useRef<SocketType | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputMessage, setInputMessage] = useState('');
