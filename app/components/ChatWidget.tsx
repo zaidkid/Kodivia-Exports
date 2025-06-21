@@ -19,7 +19,7 @@ const ChatWidget = () => {
   const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {
-    socketRef.current = io('https://kodivia-backend.onrender.com');
+    socketRef.current = io('http://localhost:5000');
 
     socketRef.current.on('connect', () => {
       console.log('✅ Connected to backend via Socket.IO');
